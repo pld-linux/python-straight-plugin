@@ -67,31 +67,25 @@ cp -a py2 py3
 
 %build
 cd py2
-%{__python} setup.py build
+%py_build
 cd -
 
 %if %{with python3}
 cd py3
-%{__python3} setup.py build
+%py3_build
 cd -
 %endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
 cd py2
-%{__python} setup.py install \
-	--skip-build \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py_install
 cd -
 %py_postclean
 
 %if %{with python3}
 cd py3
-%{__python3} setup.py install \
-	--skip-build \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py3_install
 cd -
 %endif
 
