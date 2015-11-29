@@ -13,6 +13,7 @@ Group:		Libraries/Python
 Source0:	http://pypi.python.org/packages/source/s/straight.plugin/straight.plugin-%{version}%{subver}.tar.gz
 # Source0-md5:	e1a22847055f377fa4c9a99d733eb44c
 URL:		https://github.com/ironfroggy/straight.plugin/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	python-2to3
 BuildRequires:	python-devel
 BuildRequires:	python-modules
